@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body {
+            background-image: url(images/ageofimpire.jpeg);
+        }
+    
+        section{
+            border:3px solid black;
+            padding: 10px;
+            background-color:violet;
+            font-family:monospace;
+            width:50%;
+            margin:80px auto 0 auto;
+            border-radius:5px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            text-align:center;
+            position:relative;
+        }
+        
+        li:hover {
+            cursor: pointer;
+            border: 2px solid black;
+        
+        }
+        li{
+            font-size: 17px;
+            padding:0.3rem;
+        }
+
+        
+        h1{
+            font-size: 30px;
+            text-align:center;
+            padding:1rem;
+            font-weight:400; 
+        }
+
+        h2{
+            font-size:30px;
+            text-align: center;
+            padding: 1rem;
+            font-weight: 400;
+        }
+
+        h3{
+            font-size:30px;
+            text-align: center;
+            padding: 1rem;
+            font-weight: 400;
+        }
+
+        #inventary li {
+            display: inline-block;
+    
+        }
+        
+    </style>
+</head>
+<body>
+    <section>
+        <h1>What would you like to buy?</h1>
+        <ul>
+            <li onclick="buy(potion)">Life Potion</li>
+            <li onclick="buy(sword)">Sword</li>
+            <li onclick="buy(shield)">Shield</li>
+        </ul>
+    </section>
+    <section>
+        <h2>My Inventary</h2>
+        <ul id="inventary">
+        <li><img src="images/escudo.png"></li>
+        <li><img src="images/espada.png"></li>
+        <li><img src="images/pocion.png"></li> </ul>
+        <h3 id="gold">Gold: <span>1500</span> </h3>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
