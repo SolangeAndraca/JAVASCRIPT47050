@@ -1,6 +1,6 @@
 //
 
-class Item{
+class Item {
     constructor(name, price, image){
         this.name = name;
         this.price = price;
@@ -24,10 +24,10 @@ elGold.innerText = gold;
 const elInventary = document.getElementById("inventary");
 
 //Funcion agregar items al inventario
-function buy(item){
+function buy(item) {
     if (gold - item.price >= 0){
         inventary.push(item);
-        gold -= item.precio;
+        gold = gold - item.price
 
         updateHTML();
 
@@ -36,14 +36,16 @@ function buy(item){
     }
 }
 //Funcion para vender
-function sell(ItemName){
-    const ItemFound= inventary.find((item) =>item.name ==ItemName);
-    if (ItemFound) {
-        gold += ItemFound.price;
-        const indice = inventary.indexOf(ItemFound);
+function sell(itemName){
+    const itemFound = inventary.find((item) => item.name == itemName);
+    if (itemFound) {
+        gold = gold + itemFound.price;
+        const indice = inventary.indexOf(itemFound);
         inventary.splice(indice,1);
+
         updateHTML();
     }
+
 }
 
 //Funcion para actualizar HTML
@@ -52,9 +54,10 @@ function updateHTML(){
     for (const item of inventary) {
         const li = `
         <li onclick="sell(´${item.name}´)">
-        <img src="img/${item.image}" alt="${item.image}" />
-        </li>;`
-        elInventary.innerHTML +=li;
+        <img src="images/${item.image}" alt="${item.image}" />
+        </li>`
+
+        elInventary.innerHTML +=li
     }
 
     elGold.innerText = gold;
