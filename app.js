@@ -53,7 +53,7 @@ function updateHTML(){
     elInventary.innerHTML = "";
     for (const item of inventary) {
         const li = `
-        <li onclick="sell(´${item.name}´)">
+        <li onclick="sell('${item.name}')">
         <img src="images/${item.image}" alt="${item.image}" />
         </li>`
 
